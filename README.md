@@ -3,7 +3,7 @@
 A game browser that enables users to search games by name, genre, platform, and
 publsher. Light and dark mode available.
 
-View app on: (https://game-browser-v2.netlify.app/)
+View app on: https://game-browser-v2.netlify.app/
 
 # React + Vite
 
