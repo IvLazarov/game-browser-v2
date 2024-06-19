@@ -1,0 +1,25 @@
+@use '../../sass/variables' as *;
+
+.card{
+    border: 1px solid $black;
+    border-radius: 5px;
+    width: 320px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 10px 20px;
+
+
+    img{
+        height: 200px;
+        width: 100%;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+    }
+
+    h3{
+        text-align: center;
+    }
+
+    
+}

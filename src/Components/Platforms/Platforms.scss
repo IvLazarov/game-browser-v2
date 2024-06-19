@@ -1,0 +1,23 @@
+
+.platforms-size{
+    height: 4000px;
+}
+
+//Media querries
+@media(max-width:1332px){
+    .platforms-size{
+        height: 5000px;
+    }
+}
+
+@media(max-width:995px){
+    .platforms-size{
+        height: 7000px;
+    }
+}
+
+@media(max-width:657px){
+    .platforms-size{
+        height: 13000px;
+    }
+}

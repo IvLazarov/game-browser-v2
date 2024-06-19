@@ -1,0 +1,101 @@
+@use '../../sass/variables' as *;
+
+.category-container{
+    
+    width: 100%;
+    height: fit-content;
+    margin-top: 6.6%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    h1{
+       
+        padding-top: 2%;
+        padding-bottom: 2%;
+        text-align: center;
+    }
+
+   
+}
+
+.gen-height{
+    height: 1800px;
+}
+
+.description{
+    width: 90%;
+    font-size: 20px;
+    padding-top: 2%;
+    padding-bottom: 2%;
+    text-align: justify;
+
+    h4{
+        text-align: center;
+    }
+}
+
+.games{
+    width: 100%;
+    padding-bottom: 2%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 20px 20px;
+}
+
+.category-container-l-mode{
+    background-color: $white2;
+    color: $black;
+
+}
+
+.category-container-d-mode{
+    background-color: $black;
+    color: $white2;
+}
+
+//Media querries
+@media(max-width: 1346px){
+    .category-container{
+        height: 2800px;
+    }
+}
+
+@media(max-width: 1005px){
+    .category-container{
+        height: 3200px;
+    }
+}
+
+@media(max-width: 830px){
+    .category-container{
+        margin-top: 32%;
+        padding-top: 5%;
+    }
+}
+
+@media(max-width: 710px){
+    .category-container{
+        margin-top: 20%;
+    }
+}
+
+@media(max-width: 662px){
+    .category-container{
+        height: 6100px;
+    }
+}
+
+@media(max-width: 570px){
+    .category-container{
+        margin-top: 26%;
+    }
+}
+
+@media(max-width: 475px){
+    .category-container{
+        margin-top: 32%;
+    }
+}

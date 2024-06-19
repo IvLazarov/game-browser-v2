@@ -1,0 +1,23 @@
+@use '../../sass/variables' as *;
+
+h1{
+    padding-bottom: 2%;
+}
+
+.p-size{
+    height: 1000px;
+}
+
+//Media querries
+
+@media(max-width: 1331px){
+    .p-size{
+        height: 2100px;
+    }
+}
+
+@media(max-width: 658px){
+    .p-size{
+        height: 2700px;
+    }
+}
