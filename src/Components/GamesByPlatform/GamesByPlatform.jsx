@@ -27,8 +27,8 @@ const GamesByPlatform = ({platformId, mode}) => {
                 />
               :
               gamesByPlatform.map(gameByPlatform => {
-                    return <div className={`items ${mode === false ? 'category-l-mode': 'category-d-mode'}`}>
-                        <Link key={gameByPlatform.id} to={`/game-description/${gameByPlatform.slug}`}>
+                    return <div key={gameByPlatform.id} className={`items ${mode === false ? 'category-l-mode': 'category-d-mode'}`}>
+                        <Link  to={`/game-description/${gameByPlatform.slug}`}>
                         <img src={gameByPlatform.background_image} alt="game-image" loading="lazy" />
                         <h3>{gameByPlatform.name}</h3>
                         </Link>

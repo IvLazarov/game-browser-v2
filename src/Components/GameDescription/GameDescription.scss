@@ -188,7 +188,7 @@
 
 @media(max-width:767px){
     .game-data{
-        margin-top: 33%;
+        margin-top: 32%;
     }
 
 }
@@ -223,8 +223,25 @@
     }
 }
 
+@media(max-width: 500px){
+    .title{
+        //border: 1px solid blue;
+        height: 300px;
+    }
+
+    .game-data{
+        margin-top: 30%;
+    }
+}
+
 @media(max-width: 475px){
     .game-data{
-        margin-top: 32%;
+        margin-top: 31%;
+    }
+}
+
+@media(max-width: 410px){
+    .game-data{
+        margin-top: 36%;
     }
 }
