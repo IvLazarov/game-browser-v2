@@ -1,6 +1,6 @@
 @use '../../sass/variables' as *;
 
-*{
+* {
     margin: 0;
     padding: 0;
     width: 100%;
@@ -8,7 +8,7 @@
     font-family: "Lato", sans-serif;
 }
 
-.container{   
+.container {
     width: 100%;
     height: auto;
     margin-top: 6.6%;
@@ -21,27 +21,27 @@
     align-items: center;
     gap: 15px;
     transition: all 0.3s;
-    
-    h1{
+
+    h1 {
         text-align: center;
     }
 
-    a{  
+    a {
         text-decoration: none;
         transition: transform .2s;
         transition: all .3s;
 
-        &:hover{
-             color: $black;
+        &:hover {
+            color: $black;
             transform: scale(1.1);
         }
 
-        
+
     }
 
 }
 
-.oval-container{
+.oval-container {
     height: 100%;
     padding-top: 10%;
     display: flex;
@@ -50,82 +50,84 @@
     justify-content: center;
 }
 
-.c-size{
+.c-size {
     height: 1400px;
 }
 
 
-.l-mode{
+.l-mode {
     background-color: $white2;
     color: $black;
-    
-    a, h3{
-        color:$black;
+
+    a,
+    h3 {
+        color: $black;
     }
 
-    a{
+    a {
         border: 1px solid $black;
 
     }
-    
+
 }
 
-.d-mode{
+.d-mode {
     background-color: $black;
     color: $white2;
 
-    a, h3{
-        color:$white2;
+    a,
+    h3 {
+        color: $white2;
     }
 
-    a{
+    a {
         border: 1px solid $white2;
     }
 }
 
 //Media querries
 
-@media(max-width:1300px){
- .c-size{
-    height: 2000px;
- }
+@media(max-width:1300px) {
+    .c-size {
+        height: 2000px;
+    }
 }
 
-@media(max-width:1015px){
-    .c-size{
+@media(max-width:1015px) {
+    .c-size {
         height: 2700px;
     }
 }
 
-@media(max-width:830px){
-    .container{
+@media(max-width:830px) {
+    .container {
         margin-top: 30%;
         padding-top: 5%;
-        
+
     }
 }
 
-@media(max-width:710px){
-    .container{
+@media(max-width:710px) {
+    .container {
         margin-top: 20%;
 
     }
 }
 
-@media(max-width:659px){
-    .c-size{
+@media(max-width:659px) {
+    .c-size {
         height: 5400px;
     }
 }
 
-@media(max-width:570px){
-    .container{
+@media(max-width:570px) {
+    .container {
         margin-top: 26%;
     }
 }
 
-@media(max-width:475px){
-    .container{
+@media(max-width:475px) {
+    .container {
         margin-top: 32%;
     }
 }
