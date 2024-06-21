@@ -28,7 +28,7 @@ const GameStores = ({gameId}) => {
     },[])
 
     return <>
-        {
+        { 
                gameStores.map(store => {
                     return <Link to={store.url} 
                     key={store.id}

@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import GameStores from '../GameStores/GameStores';
 import { Oval } from 'react-loader-spinner';
 import '../GameDescription/GameDescription.scss';
+import ErrorPage from '../ErrorPage/ErrorPage';
 
 const GameDescription = ({mode}) => {
 
@@ -11,17 +12,26 @@ const [gameData, setGameData] = useState({})
 
 
 
-useEffect(()=>{
-    fetch(`https://api.rawg.io/api/games/${gameId}?key=4bc0eac8b3e74a84a29fa89b0d4181a8`)
-    .then(response => response.json())
-    .then((data) => {
-        console.log(data)
-        setGameData(data)
-    })
+
+useEffect(() => {
+
+        fetch(`https://api.rawg.io/api/games/${gameId}?key=4bc0eac8b3e74a84a29fa89b0d4181a8`)
+        .then(response => response.json())
+        .then((data) => {
+            console.log(data)
+            setGameData(data)
+        })
+    
 },[])
+    
 
 
-    return(
+if (gameData.detail) return <div className={`game-not-found ${mode === false ? 'game-data-l-mode': 'game-data-d-mode'}`}>
+    <h1>Game not found!</h1>
+    <Link to={'/search-results'}> Back to search results </Link>
+</div>
+
+return(
         <>
         {
             Object.keys(gameData).length === 0 ? 
@@ -48,34 +58,58 @@ useEffect(()=>{
             
             <div className='game-images'>
                 <div className='background-image'>
-                  <img src={gameData.background_image} loading="lazy"   alt='bg-image' />
+                    {
+                        gameData.background_image === null ?
+                        <img 
+                        src="https://images.unsplash.com/photo-1579373903781-fd5c0c30c4cd?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+                        alt="bg-image" />
+                        :
+                        <img src={gameData.background_image} loading="lazy"   alt='bg-image' />
+                    }
+                  
                 </div>
                 
             </div>
            </div>
            <div className='game-description'>
-            {gameData.description_raw}
+            {
+            gameData.description_raw ? gameData.description_raw : 'No description available'
+            
+            }
             </div>
            
            <div className='additional-info'>
             <div className='game-info'>
-            <div className='game-genres'>
-            <h4>Genres</h4>
+            {
+                gameData.genres.length === 0 ? null :
+                <div className='game-genres'>
+            
+                <h4>Genres</h4>
             {
                gameData?.genres?.map( genre => {
                     return <Link to={`/genres/${genre.slug}`} key={genre.id}>{genre.name}</Link>
                 } )
             }  
             </div>
-            <div className='game-developers'>
-            <h4>Developers</h4>
+            }
+            
+            
+            {
+                gameData.developers.length === 0 ? null : 
+
+                <div className='game-developers'>
+                <h4>Developers</h4>
+            
             {
                gameData?.developers?.map(developer => {
                     return <Link key={developer.id} to={`/developers/${developer.slug}`}>{developer.name}</Link>
                 })
             }  
             </div>
-           
+            }
+            
+            {
+                gameData.publishers.length === 0 ? null :
             <div className="publishers">
             <h4>Publishers</h4>
             {
@@ -84,6 +118,11 @@ useEffect(()=>{
                 })
             }
             </div>
+
+            }
+            
+            {
+                gameData.platforms.length === 0 ? null :
             <div className="platforms">
             <h4>Platforms</h4>
             {
@@ -92,13 +131,14 @@ useEffect(()=>{
                 })
             }
             </div>
+            }
+            </div>
+            
             
   
-            </div>
-           
-            
-            
-            
+            {
+                gameData.tags.length === 0 ? null : 
+
             <div className='tags'>
             <h4>Tags</h4>
             {
@@ -107,17 +147,22 @@ useEffect(()=>{
                 })
             }   
             </div>
+            }
+            
             
             
             
          
             
-            
-
-            <div className='stores'>
+            {
+                gameData.stores.length === 0 ? null :
+                <div className='stores'>
             <h4>Stores</h4>
             <GameStores gameId={gameId} />  
             </div>
+            }
+
+            
             
             
 

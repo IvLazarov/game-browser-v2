@@ -26,7 +26,16 @@ const SearchResults = ({searchResults, searchTerm, loading, mode}) => {
                :
                searchResults.map( searchResult => {
                     return <Link key={searchResult.id} to={`/game-description/${searchResult.slug}`} className='card'>
-                        <img src={searchResult.background_image} alt="game-img" loading='lazy' />
+                        {
+                            searchResult.background_image === null ?
+                            <img 
+                            src="https://images.unsplash.com/photo-1579373903781-fd5c0c30c4cd?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+                            alt="bg-image"  
+                            loading='lazy'/>
+                            :
+                            <img src={searchResult.background_image} alt="game-img" loading='lazy' />
+                        }
+                        
                         <h3>{searchResult.name}</h3>
                     </Link>
                 })

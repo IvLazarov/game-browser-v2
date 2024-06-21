@@ -23,6 +23,7 @@ function App() {
   const[mode, setMode]=useState(false)
   let navigateTo = useNavigate()
 
+
   const handleInput=(event) => {
     
     setSearchQuery(event.target.value)
@@ -40,6 +41,7 @@ function App() {
         setSearchResults(data?.results)
         setLoading(false)
       })
+      
 
       if(searchQuery.length > 0){
         setSearchTerm(true)
